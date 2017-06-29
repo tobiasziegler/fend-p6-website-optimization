@@ -17,6 +17,7 @@
   "homepage": "https://github.com/tobiasziegler/fend-p6-website-optimization#readme",
   "devDependencies": {
     "browser-sync": "^2.18.12",
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-gh-pages": "^0.5.4"
   }
 }
