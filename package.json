@@ -14,5 +14,8 @@
   "bugs": {
     "url": "https://github.com/tobiasziegler/fend-p6-website-optimization/issues"
   },
-  "homepage": "https://github.com/tobiasziegler/fend-p6-website-optimization#readme"
+  "homepage": "https://github.com/tobiasziegler/fend-p6-website-optimization#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
 }
