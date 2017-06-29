@@ -1,0 +1,18 @@
+{
+  "name": "fend-p6-website-optimization",
+  "version": "1.0.0",
+  "description": "Project 6 (Website Optimization) for Udacity's Front-End Web Developer Nanodegree",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tobiasziegler/fend-p6-website-optimization.git"
+  },
+  "author": "David Mallard",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tobiasziegler/fend-p6-website-optimization/issues"
+  },
+  "homepage": "https://github.com/tobiasziegler/fend-p6-website-optimization#readme"
+}
