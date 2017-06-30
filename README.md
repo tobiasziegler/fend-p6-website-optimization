@@ -54,5 +54,6 @@ Initial PageSpeed Insights scores - tested on local Browsersync server (URL via 
 - Minify the HTML files using `gulp-htmlmin`.
 - Minify the JavaScript files using `gulp-uglify`.
 - Minify the CSS files using `gulp-cssnano`.
+- Replace the large pizzeria image on the homepage with a resized version.
 
 ### Part 2: Optimize Frames per Second in pizza.html
