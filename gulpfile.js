@@ -1,17 +1,32 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var deploy = require('gulp-gh-pages');
+var ngrok = require('ngrok');
+var port = 3000;
 
 gulp.task('build', function() {
 	return gulp.src('src/**/*')
 	.pipe(gulp.dest('dist'));
 });
 
-gulp.task('browser-sync', function() {
+gulp.task('serve', function() {
+	// Open the site on a local server using Browsersync
 	browserSync.init({
 		server: {
-			baseDir: 'dist'
+			baseDir: 'dist',
+			port: port
 		}
+	},
+	// Get a URL that external connections and PageSpeed Insights can access
+	function(err, browserSync) {
+		return ngrok.connect(
+			port,
+			function(err, url) {
+				console.log(' ----------------------------------');
+				console.log('ngrok URL: ' + url);
+				console.log(' ----------------------------------');
+			}
+		);
 	});
 });
 
