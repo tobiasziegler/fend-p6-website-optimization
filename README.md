@@ -30,6 +30,18 @@ You have two options for viewing and testing the site:
 	1. After changing any of the source files, run `gulp build` to update the
 	site.
 
+## Baseline Performance Testing
+
+Initial PageSpeed Insights scores - tested on GitHub Pages:
+
+![Mobile PageSpeed: Poor 27/100](img/psi-mobile-gh-pages.png)
+![Desktop PageSpeed: Poor 29/100](img/psi-desktop-gh-pages.png)
+
+Initial PageSpeed Insights scores - tested on local Browsersync server (URL via ngrok):
+
+![Mobile PageSpeed: Needs Work 73/100](img/psi-mobile-ngrok.png)
+![Desktop PageSpeed: Good 88/100](img/psi-desktop-ngrok.png)
+
 ## Optimizations Made
 
 ### Part 1: Optimize PageSpeed Insights score for index.html
