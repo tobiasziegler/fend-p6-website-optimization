@@ -3,6 +3,16 @@ var browserSync = require('browser-sync').create();
 var deploy = require('gulp-gh-pages');
 var ngrok = require('ngrok');
 var port = 3000;
+var imagemin = require('gulp-imagemin');
+
+// Optimize images using imagemin
+gulp.task('images', function() {
+	return gulp.src('src/img/**/*.+(png|jpg|gif|svg)')
+	.pipe(imagemin({
+		verbose: true
+	}))
+	.pipe(gulp.dest('dist/img'));
+});
 
 gulp.task('build', function() {
 	return gulp.src('src/**/*')
