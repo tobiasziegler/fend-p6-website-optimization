@@ -6,6 +6,7 @@ var port = 3000;
 var imagemin = require('gulp-imagemin');
 var inlineSource = require('gulp-inline-source');
 var del = require('del');
+var htmlmin = require('gulp-htmlmin');
 
 // Optimize images using imagemin
 gulp.task('images', function() {
@@ -16,10 +17,13 @@ gulp.task('images', function() {
 	.pipe(gulp.dest('dist'));
 });
 
-// Inline files into the HTML
-gulp.task('inline', function() {
+// Inline files and minify the HTML
+gulp.task('html', function() {
 	return gulp.src('src/**/*.html')
 	.pipe(inlineSource())
+	.pipe(htmlmin({
+		collapseWhitespace: true
+	}))
 	.pipe(gulp.dest('dist'));
 });
 
