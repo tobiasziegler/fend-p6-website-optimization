@@ -53,5 +53,6 @@ Initial PageSpeed Insights scores - tested on local Browsersync server (URL via 
 - Inline the main stylesheet using `gulp-inline-source`.
 - Minify the HTML files using `gulp-htmlmin`.
 - Minify the JavaScript files using `gulp-uglify`.
+- Minify the CSS files using `gulp-cssnano`.
 
 ### Part 2: Optimize Frames per Second in pizza.html

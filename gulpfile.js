@@ -8,6 +8,7 @@ var inlineSource = require('gulp-inline-source');
 var del = require('del');
 var htmlmin = require('gulp-htmlmin');
 var uglify = require('gulp-uglify');
+var cssnano = require('gulp-cssnano');
 
 // Optimize images using imagemin
 gulp.task('images', function() {
@@ -22,6 +23,13 @@ gulp.task('images', function() {
 gulp.task('js', function() {
 	return gulp.src('src/**/*.js')
 	.pipe(uglify())
+	.pipe(gulp.dest('dist'));
+});
+
+// Minify the CSS files
+gulp.task('css', function() {
+	return gulp.src('src/**/*.css')
+	.pipe(cssnano())
 	.pipe(gulp.dest('dist'));
 });
 
