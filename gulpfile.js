@@ -5,6 +5,7 @@ var ngrok = require('ngrok');
 var port = 3000;
 var imagemin = require('gulp-imagemin');
 var inlineSource = require('gulp-inline-source');
+var del = require('del');
 
 // Optimize images using imagemin
 gulp.task('images', function() {
@@ -20,6 +21,11 @@ gulp.task('inline', function() {
 	return gulp.src('src/**/*.html')
 	.pipe(inlineSource())
 	.pipe(gulp.dest('dist'));
+});
+
+// Delete the build directory and its contents
+gulp.task('clean', function() {
+	return del.sync('dist');
 });
 
 gulp.task('build', function() {
