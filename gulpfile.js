@@ -7,6 +7,7 @@ var imagemin = require('gulp-imagemin');
 var inlineSource = require('gulp-inline-source');
 var del = require('del');
 var htmlmin = require('gulp-htmlmin');
+var uglify = require('gulp-uglify');
 
 // Optimize images using imagemin
 gulp.task('images', function() {
@@ -14,6 +15,13 @@ gulp.task('images', function() {
 	.pipe(imagemin({
 		verbose: true
 	}))
+	.pipe(gulp.dest('dist'));
+});
+
+// Uglify the JS files
+gulp.task('js', function() {
+	return gulp.src('src/**/*.js')
+	.pipe(uglify())
 	.pipe(gulp.dest('dist'));
 });
 

@@ -52,5 +52,6 @@ Initial PageSpeed Insights scores - tested on local Browsersync server (URL via 
 - Use Web Font Loader for loading Google Fonts to prevent render blocking.
 - Inline the main stylesheet using `gulp-inline-source`.
 - Minify the HTML files using `gulp-htmlmin`.
+- Minify the JavaScript files using `gulp-uglify`.
 
 ### Part 2: Optimize Frames per Second in pizza.html
