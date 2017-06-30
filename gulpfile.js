@@ -4,6 +4,7 @@ var deploy = require('gulp-gh-pages');
 var ngrok = require('ngrok');
 var port = 3000;
 var imagemin = require('gulp-imagemin');
+var inlineSource = require('gulp-inline-source');
 
 // Optimize images using imagemin
 gulp.task('images', function() {
@@ -11,6 +12,13 @@ gulp.task('images', function() {
 	.pipe(imagemin({
 		verbose: true
 	}))
+	.pipe(gulp.dest('dist'));
+});
+
+// Inline files into the HTML
+gulp.task('inline', function() {
+	return gulp.src('src/**/*.html')
+	.pipe(inlineSource())
 	.pipe(gulp.dest('dist'));
 });
 

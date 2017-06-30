@@ -50,5 +50,6 @@ Initial PageSpeed Insights scores - tested on local Browsersync server (URL via 
 - Add media type to the print stylesheet link to prevent render blocking.
 - Load the Google Analytics script asynchronously.
 - Use Web Font Loader for loading Google Fonts to prevent render blocking.
+- Inline the main stylesheet using `gulp-inline-source`.
 
 ### Part 2: Optimize Frames per Second in pizza.html
