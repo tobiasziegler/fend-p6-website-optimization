@@ -58,3 +58,11 @@ Initial PageSpeed Insights scores - tested on local Browsersync server (URL via 
 - Replace Cameron's profile picture with PageSpeed Insights' optimized version.
 
 ### Part 2: Optimize Frames per Second in pizza.html
+
+- Fix the forced synchronous layout problem when the pizza size is switched.
+The existing code iterated through each DOM element that has the class
+randomPizzaContainer, first checking its current size then calculating a new
+size and setting the corresponding style. The revised code calculates the size
+that all pizzas will need to be first and then sets all of their sizes
+afterward. This fix brings the time taken to resize the pizzas down from around
+100ms to around 3ms.
