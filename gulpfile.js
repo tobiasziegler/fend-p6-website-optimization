@@ -7,11 +7,11 @@ var imagemin = require('gulp-imagemin');
 
 // Optimize images using imagemin
 gulp.task('images', function() {
-	return gulp.src('src/img/**/*.+(png|jpg|gif|svg)')
+	return gulp.src('src/**/*.+(png|jpg|gif|svg)')
 	.pipe(imagemin({
 		verbose: true
 	}))
-	.pipe(gulp.dest('dist/img'));
+	.pipe(gulp.dest('dist'));
 });
 
 gulp.task('build', function() {
