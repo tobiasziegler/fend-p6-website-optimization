@@ -9,6 +9,7 @@ var del = require('del');
 var htmlmin = require('gulp-htmlmin');
 var uglify = require('gulp-uglify');
 var cssnano = require('gulp-cssnano');
+var runSequence = require('run-sequence');
 
 // Optimize images using imagemin
 gulp.task('images', function() {
@@ -49,8 +50,11 @@ gulp.task('clean', function() {
 });
 
 gulp.task('build', function() {
-	return gulp.src('src/**/*')
-	.pipe(gulp.dest('dist'));
+	runSequence(
+		'clean',
+		['css', 'js', 'images'],
+		'html'
+	);
 });
 
 gulp.task('serve', function() {
