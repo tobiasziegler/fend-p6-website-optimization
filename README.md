@@ -47,5 +47,6 @@ Initial PageSpeed Insights scores - tested on local Browsersync server (URL via 
 ### Part 1: Optimize PageSpeed Insights score for index.html
 
 - Automatically optimize images using `gulp-imagemin`.
+- Add media type to the print stylesheet link to prevent render blocking.
 
 ### Part 2: Optimize Frames per Second in pizza.html
