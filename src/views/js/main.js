@@ -485,6 +485,21 @@ function logAverageFrame(times) {   // times is the array of User Timing measure
 // The following code for sliding background pizzas was pulled from Ilya's demo found at:
 // https://www.igvita.com/slides/2012/devtools-tips-and-tricks/jank-demo.html
 
+// Debouncing the scroll event - code based on:
+// https://www.html5rocks.com/en/tutorials/speed/animations/
+
+// Set a variable to indicate whether animation should be active
+var ticking = false;
+
+// When a scroll event triggers, call requestAnimationFrame to optimize the
+// timing of the background update function.
+function onScroll() {
+  if(!ticking) {
+    requestAnimationFrame(updatePositions);
+  }
+  ticking = true;
+}
+
 // Moves the sliding background pizzas based on scroll position
 function updatePositions() {
   frame++;
@@ -514,10 +529,13 @@ function updatePositions() {
     var timesToUpdatePosition = window.performance.getEntriesByName("measure_frame_duration");
     logAverageFrame(timesToUpdatePosition);
   }
+
+  // Reset the ticking until another scroll event is triggered
+  ticking = false;
 }
 
-// runs updatePositions on scroll
-window.addEventListener('scroll', updatePositions);
+// runs onScroll which will call rAF for animated background
+window.addEventListener('scroll', onScroll);
 
 // Generates the sliding pizzas when the page loads.
 document.addEventListener('DOMContentLoaded', function() {

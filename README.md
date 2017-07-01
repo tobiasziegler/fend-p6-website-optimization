@@ -80,3 +80,6 @@ with the User Timing API, down from around 20ms to around 1ms.
 call and stored instead of queried in a loop for every item, and that the
 sine-curve calculations are only performed as many times as needed to obtain
 the necessary values (five times) instead of once per element.
+
+- Call `updatePositions()` via `requestAnimationFrame` to optimize the timing
+of when the animation code executes.
