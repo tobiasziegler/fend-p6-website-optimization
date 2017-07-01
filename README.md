@@ -66,3 +66,12 @@ size and setting the corresponding style. The revised code calculates the size
 that all pizzas will need to be first and then sets all of their sizes
 afterward. This fix brings the time taken to resize the pizzas down from around
 100ms to around 3ms.
+
+- Fix a forced synchronous layout issue with the movement of the background
+pizzas during scrolling. The original code iterates through each background
+item, calculates a new position based on a sine-curve algorithm that checks
+the current vertical position of the scroll bar, and then sets the style for
+the item to its new horizontal position. The revised code first performs the
+calculations for all items and then updates styles for the whole batch of items.
+This fix brings the average scripting time to generate 10 frames, as measured
+with the User Timing API, down from around 20ms to around 1ms.
