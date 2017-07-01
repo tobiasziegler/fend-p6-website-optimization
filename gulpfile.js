@@ -78,6 +78,28 @@ gulp.task('serve', function() {
 	});
 });
 
+gulp.task('serve:src', function() {
+	// Open the development version of the site on a local server using
+	// Browsersync - useful for debugging with unminified code.
+	browserSync.init({
+		server: {
+			baseDir: 'src',
+			port: port
+		}
+	},
+	// Get a URL that external connections and PageSpeed Insights can access
+	function(err, browserSync) {
+		return ngrok.connect(
+			port,
+			function(err, url) {
+				console.log(' ----------------------------------');
+				console.log('ngrok URL: ' + url);
+				console.log(' ----------------------------------');
+			}
+		);
+	});
+});
+
 /**
  * Push build to gh-pages:
  * https://medium.com/superhighfives/deploying-to-github-pages-with-gulp-c06efc527de8
