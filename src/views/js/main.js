@@ -492,11 +492,18 @@ function updatePositions() {
 
   var items = document.querySelectorAll('.mover');
   var phases = [];
-  for (var i = 0; i < items.length; i++) {
-    phases[i] = Math.sin((document.body.scrollTop / 1250) + (i % 5));
+
+  // Get the number of pixels that the page has scrolled vertically
+  var scrollTop = document.body.scrollTop;
+
+  // Use scroll position to calculate the five phase values to apply to pizzas
+  for (var i = 0; i < 5; i++) {
+    phases[i] = Math.sin((scrollTop / 1250) + (i % 5));
   }
+
+  // Iterate through the pizza items and set their new position
   for (var j = 0; j < items.length; j++) {
-    items[j].style.left = items[j].basicLeft + 100 * phases[j] + 'px';
+    items[j].style.left = items[j].basicLeft + 100 * phases[j % 5] + 'px';
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.

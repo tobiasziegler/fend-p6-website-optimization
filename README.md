@@ -75,3 +75,8 @@ the item to its new horizontal position. The revised code first performs the
 calculations for all items and then updates styles for the whole batch of items.
 This fix brings the average scripting time to generate 10 frames, as measured
 with the User Timing API, down from around 20ms to around 1ms.
+
+- Refactor `updatePositions()` so that scroll position is checked by a single
+call and stored instead of queried in a loop for every item, and that the
+sine-curve calculations are only performed as many times as needed to obtain
+the necessary values (five times) instead of once per element.
