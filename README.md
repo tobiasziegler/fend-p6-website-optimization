@@ -91,3 +91,7 @@ compositor thread assisted by the GPU.
 
 - Reduce the number of background pizzas from 200 to 32. This gives four rows of
 8 pizzas, which is adequate for large screen sizes.
+
+- Use more efficient functions to select items, i.e., `getElementById()` and
+`getElementsByClassName()` instead of `querySelector()` and
+`querySelectorAll()`.
