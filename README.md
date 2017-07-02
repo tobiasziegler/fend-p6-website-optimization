@@ -23,12 +23,14 @@ You have two options for viewing and testing the site:
 
 	1. Run `npm install` to install dev dependencies.
 
-	1. Use `gulp serve` to open the site in your browser. Note that you'll be
-	shown an `ngrok` URL in the terminal that can be used for access from other
-	devices or for testing with PageSpeed Insights.
-
 	1. After changing any of the source files, run `gulp build` to update the
 	site.
+
+	1. Use `gulp serve` to open the site in your browser. Alternatively, you can
+	use `gulp serve:src` to open the site from the development directory, which
+	can be useful for debugging and testing with unminified code. Note that
+	you'll be shown an `ngrok` URL in the terminal that can be used for access
+	from other devices or for testing with PageSpeed Insights.
 
 ## Baseline Performance Testing
 
