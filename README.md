@@ -98,3 +98,6 @@ compositor thread assisted by the GPU.
 
 - Refactor the function that creates the background pizzas to use and cache a
 single DOM query outside the item creation loop.
+
+- Add `will-change: transform` to the CSS for background pizza elements to hint
+to browsers that they should prepare to animate these items.
