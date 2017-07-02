@@ -518,7 +518,7 @@ function updatePositions() {
 
   // Iterate through the pizza items and set their new position
   for (var j = 0; j < items.length; j++) {
-    items[j].style.left = items[j].basicLeft + 100 * phases[j % 5] + 'px';
+    items[j].style.transform = 'translateX(' + 100 * phases[j % 5] + 'px)';
   }
 
   // User Timing API to the rescue again. Seriously, it's worth learning.
@@ -547,7 +547,7 @@ document.addEventListener('DOMContentLoaded', function() {
     elem.src = "images/pizza.png";
     elem.style.height = "100px";
     elem.style.width = "73.333px";
-    elem.basicLeft = (i % cols) * s;
+    elem.style.left = (i % cols) * s + 'px';
     elem.style.top = (Math.floor(i / cols) * s) + 'px';
     document.querySelector("#movingPizzas1").appendChild(elem);
   }

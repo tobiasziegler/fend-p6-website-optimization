@@ -83,3 +83,8 @@ the necessary values (five times) instead of once per element.
 
 - Call `updatePositions()` via `requestAnimationFrame` to optimize the timing
 of when the animation code executes.
+
+- Use `transform` for animation rather than updating the `left` style. As
+[CSS Triggers](https://csstriggers.com/) indicates, `transform` doesn't trigger
+layout or painting, which should allow the animation to be carried out by the
+compositor thread assisted by the GPU.
