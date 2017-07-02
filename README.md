@@ -88,3 +88,6 @@ of when the animation code executes.
 [CSS Triggers](https://csstriggers.com/) indicates, `transform` doesn't trigger
 layout or painting, which should allow the animation to be carried out by the
 compositor thread assisted by the GPU.
+
+- Reduce the number of background pizzas from 200 to 32. This gives four rows of
+8 pizzas, which is adequate for large screen sizes.
