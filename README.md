@@ -95,3 +95,6 @@ compositor thread assisted by the GPU.
 - Use more efficient functions to select items, i.e., `getElementById()` and
 `getElementsByClassName()` instead of `querySelector()` and
 `querySelectorAll()`.
+
+- Refactor the function that creates the background pizzas to use and cache a
+single DOM query outside the item creation loop.
